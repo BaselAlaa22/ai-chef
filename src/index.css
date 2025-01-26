@@ -104,6 +104,7 @@ ul.ingredients-list > li {
   font-family: Inter, sans-serif;
   font-size: 0.875rem;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 .suggested-recipe-container {
@@ -111,6 +112,7 @@ ul.ingredients-list > li {
   line-height: 28px;
   font-size: 1.125rem;
   font-weight: 400;
+  margin-bottom: 5rem;
 }
 
 .suggested-recipe-container ul li,
