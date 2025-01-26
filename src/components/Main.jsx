@@ -11,6 +11,7 @@ export default function Main() {
     "heavy cream",
     "pasta",
   ]);
+  const [loading, setLoading] = React.useState(false);
   const [recipe, setRecipe] = React.useState("");
   const recipeSection = React.useRef(null);
 
@@ -21,8 +22,16 @@ export default function Main() {
   }, [recipe]);
 
   async function getRecipe() {
-    const recipeMarkdown = await getRecipeFromMistral(ingredients);
-    setRecipe(recipeMarkdown);
+    try {
+      setLoading(true);
+      const recipeMarkdown = await getRecipeFromMistral(ingredients);
+      setRecipe(recipeMarkdown);
+      console.log(recipeMarkdown);
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
   }
 
   function addIngredient(formData) {
@@ -47,6 +56,7 @@ export default function Main() {
           ref={recipeSection}
           ingredients={ingredients}
           getRecipe={getRecipe}
+          loading={loading}
         />
       )}
 
