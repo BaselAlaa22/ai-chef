@@ -20,7 +20,7 @@ How to Run Locally
 
     Clone the repository:
 
-git clone <repository-link>  
+git clone https://github.com/BaselAlaa22/ai-chef.git
 
 Navigate to the project directory:
 
