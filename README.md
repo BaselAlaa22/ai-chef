@@ -1,19 +1,37 @@
-# Getting Started
-Install the dependencies and run the project
-```
-npm install
-npm start
-```
+Chef Claude Recipe App
+Overview
 
-Head over to https://vitejs.dev/ to learn more about configuring vite
-## About Scrimba
+Chef Claude is a React-based recipe search application where users can explore recipes by searching ingredients or dish names. With an intuitive interface and seamless API integration, the app delivers quick results and detailed instructions to inspire culinary creations.
+Features
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+    Search recipes using an external API.
+    View detailed instructions, ingredients, and images for each recipe.
+    Responsive design for an optimal user experience on any device.
+    Built with React hooks for efficient state management.
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+Technologies Used
 
-Happy Coding!
+    React
+    JavaScript (ES6+)
+    CSS3
+    Fetch API
+
+How to Run Locally
+
+    Clone the repository:
+
+git clone <repository-link>  
+
+Navigate to the project directory:
+
+cd chef-claude  
+
+Install dependencies:
+
+npm install  
+
+Start the development server:
+
+npm start  
+
+Open http://localhost:3000 in your browser.
