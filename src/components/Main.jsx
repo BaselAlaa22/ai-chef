@@ -35,6 +35,9 @@ export default function Main() {
 
   return (
     <main>
+      <h1 className="deprecated-app-warning">
+        THIS APP IS DEPRECIATED AS IT REQUIRES BACKEND KNOWLEDGE I DON'T HAVE
+      </h1>
       <form action={addIngredient} className="add-ingredient-form">
         <input
           type="text"

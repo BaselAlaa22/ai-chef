@@ -7,7 +7,13 @@ body {
   font-family: Inter, sans-serif;
   background-color: #fafaf8;
 }
+.deprecated-app-warning {
+  color: #d17557;
 
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
 header {
   display: flex;
   justify-content: center;
