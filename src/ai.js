@@ -18,20 +18,22 @@ You are an assistant that receives a list of ingredients that a user has and sug
 
 // Make sure you set an environment variable in Scrimba
 // for HF_ACCESS_TOKEN
-const hf = new HfInference(import.meta.env.VITE_API_KEY);
+const API_KEY = import.meta.env.VITE_API_KEY;
+const hf = new HfInference(API_KEY);
 
 export async function getRecipeFromMistral(ingredientsArr) {
   const ingredientsString = ingredientsArr.join(", ");
   try {
-    const response = await hf.chatCompletion({
-      model: "mistralai/Mistral-7B-Instruct-v0.3",
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        {
-          role: "user",
-          content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!`,
-        },
-      ],
+    const response = await hf.textGeneration({
+      model: "gpt2",
+      input: `${SYSTEM_PROMPT}\nI have ${ingredientsString}. Please give me a recipe you'd recommend I make!`,
+      // messages: [
+      //   { role: "system", content: SYSTEM_PROMPT },
+      //   {
+      //     role: "user",
+      //     content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!`,
+      //   },
+      // ],
       max_tokens: 1024,
     });
     return response.choices[0].message.content;

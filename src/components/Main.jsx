@@ -4,7 +4,12 @@ import ClaudeRecipe from "./ClaudeRecipe";
 import { getRecipeFromMistral } from "../ai";
 
 export default function Main() {
-  const [ingredients, setIngredients] = React.useState([]);
+  const [ingredients, setIngredients] = React.useState([
+    "all the main spices",
+    "pasta",
+    "ground beef",
+    "tomato paste",
+  ]);
   const [loading, setLoading] = React.useState(false);
   const [recipe, setRecipe] = React.useState("");
   const recipeSection = React.useRef(null);
@@ -36,7 +41,9 @@ export default function Main() {
   return (
     <main>
       <h1 className="deprecated-app-warning">
-        THIS APP IS DEPRECIATED AS IT REQUIRES BACKEND KNOWLEDGE I DON'T HAVE
+        THIS APP IS DEPRECIATED AS IT EITHER REQUIRES BACKEND KNOWLEDGE I DON'T
+        HAVE
+        <br /> OR THE HUGGING FACE INTERFACE STOPPED WORKING. SORRY!
       </h1>
       <form action={addIngredient} className="add-ingredient-form">
         <input
