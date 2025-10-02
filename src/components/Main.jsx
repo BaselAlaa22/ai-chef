@@ -4,12 +4,7 @@ import ClaudeRecipe from "./ClaudeRecipe";
 import { getRecipeFromMistral } from "../ai";
 
 export default function Main() {
-  const [ingredients, setIngredients] = React.useState([
-    "all the main spices",
-    "pasta",
-    "ground beef",
-    "tomato paste",
-  ]);
+  const [ingredients, setIngredients] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [recipe, setRecipe] = React.useState("");
   const recipeSection = React.useRef(null);
@@ -25,7 +20,6 @@ export default function Main() {
       setLoading(true);
       const recipeMarkdown = await getRecipeFromMistral(ingredients);
       setRecipe(recipeMarkdown);
-      console.log(recipeMarkdown);
     } catch (e) {
       console.error(e);
     } finally {
@@ -40,11 +34,6 @@ export default function Main() {
 
   return (
     <main>
-      <h1 className="deprecated-app-warning">
-        THIS APP IS DEPRECIATED AS IT EITHER REQUIRES BACKEND KNOWLEDGE I DON'T
-        HAVE
-        <br /> OR THE HUGGING FACE INTERFACE STOPPED WORKING. SORRY!
-      </h1>
       <form action={addIngredient} className="add-ingredient-form">
         <input
           type="text"
